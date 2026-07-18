@@ -74,7 +74,7 @@ class SocialShareProvider extends ActiveRecord
             return;
         }
 
-        json_decode($value);
+        json_decode((string) $value);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             $this->addError($attribute, Yii::t('SocialshareModule.base', 'Custom settings must be valid JSON.'));
